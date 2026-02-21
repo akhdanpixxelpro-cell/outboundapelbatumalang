@@ -127,7 +127,7 @@ header.scrolled {
 .hero {
     height: 100vh;
     min-height: 600px;
-    background: url('https://images.unsplash.com/photo-1560806173-9934b1792d3b?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+    background: url('img/2.png') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
