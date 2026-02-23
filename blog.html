@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Blog & Tips Wisata - Petik Apel Batu Malang</title>
+    <meta name="description"
+        content="Baca artikel, tips, dan informasi seputar wisata petik apel di Batu Malang. Temukan inspirasi outbound keluarga, edukasi anak, dan oleh-oleh khas Batu.">
+    <meta name="keywords"
+        content="blog wisata batu, tips petik apel, outbound malang, edukasi anak batu, oleh-oleh batu malang">
+    <meta name="author" content="Petik Apel Batu">
+    <link rel="canonical" href="https://petikapelbatu.id/blog.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://petikapelbatu.id/blog.html">
+    <meta property="og:title" content="Blog & Tips Wisata - Petik Apel Batu">
+    <meta property="og:description"
+        content="Artikel dan tips seputar wisata petik apel, outbound keluarga, dan edukasi anak di Batu Malang.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1590756254933-2873d72a83b6?auto=format&fit=crop&q=80&w=1200">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn-icons-png.flaticon.com/512/415/415682.png">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/415/415682.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ---- Blog Page Specific Styles ---- */
+        .blog-hero {
+            background: linear-gradient(135deg, #1a3a16 0%, #2D5A27 60%, #4A7C44 100%);
+            padding: 9rem 0 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
+        }
+
+        .blog-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.06);
+            pointer-events: none;
+        }
+
+        .blog-hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .blog-hero-content .sub-title {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .blog-hero-content h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: white;
+        }
+
+        .blog-hero-content h1 span {
+            color: var(--gold);
+        }
+
+        .blog-hero-content p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .blog-breadcrumb {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-breadcrumb a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .blog-breadcrumb a:hover {
+            color: var(--gold);
+        }
+
+        .blog-breadcrumb span {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ---- Blog Page Main ---- */
+        .blog-page {
+            padding: 6rem 0 8rem;
+            background: var(--bg-light);
+        }
+
+        .blog-page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .blog-page-header h2 {
+            font-size: 1.6rem;
+            color: var(--text-dark);
+        }
+
+        .blog-count {
+            font-size: 0.875rem;
+            color: #999;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            border: 1px solid #eee;
+        }
+
+        /* Larger grid for blog page */
+        .blog-page-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        /* Featured first card (spans 2 columns) */
+        .blog-card-featured {
+            grid-column: span 2;
+        }
+
+        .blog-card-featured .blog-img {
+            height: 320px;
+        }
+
+        .blog-card-featured .blog-info h3 {
+            font-size: 1.6rem;
+        }
+
+        /* Back to home CTA */
+        .blog-back-cta {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid #eee;
+        }
+
+        .blog-back-cta p {
+            color: #888;
+            margin-bottom: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .btn-back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.85rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .btn-back-home:hover {
+            background: #1a3a16;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(45, 90, 39, 0.25);
+        }
+
+        @media (max-width: 968px) {
+            .blog-page-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-card-featured {
+                grid-column: span 1;
+            }
+
+            .blog-card-featured .blog-img {
+                height: 220px;
+            }
+
+            .blog-card-featured .blog-info h3 {
+                font-size: 1.4rem;
+            }
+
+            .blog-page-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (min-width: 969px) and (max-width: 1200px) {
+            .blog-page-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .blog-card-featured {
+                grid-column: span 2;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header id="header">
+        <nav class="navbar" aria-label="Main Navigation">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <span class="logo-text">Apel<span>Batu</span></span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">Tentang</a></li>
+                <li><a href="blog.html" class="nav-active">Blog</a></li>
+                <li><a href="https://wa.me/082211221909" class="btn-cta" target="_blank"
+                        rel="noopener noreferrer">Booking</a></li>
+            </ul>
+            <div class="mobile-menu-icon" id="mobile-menu-icon" aria-label="Open Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Hero Banner -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html">&#127968; Home</a>
+                    <span>/</span>
+                    <span>Blog</span>
+                </nav>
+                <span class="sub-title">Cerita Kebun</span>
+                <h1>Blog &amp; Tips <span>Wisata Apel</span></h1>
+                <p>Temukan artikel, tips perjalanan, dan informasi menarik seputar wisata petik apel, outbound keluarga,
+                    serta edukasi anak di Kota Batu, Malang.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid Section -->
+    <section class="blog-page">
+        <div class="container">
+            <div class="blog-page-header">
+                <h2>Semua Artikel</h2>
+                <span class="blog-count">5 Artikel</span>
+            </div>
+
+            <div class="blog-page-grid">
+
+                <!-- Blog Card 1 (Featured) -->
+                <article class="blog-card blog-card-featured reveal">
+                    <div class="blog-img">
+                        <img src="img/b1.png" alt="Visualisasi AI membantu optimalisasi wisata edukasi" loading="lazy"
+                            width="800" height="400">
+                    </div>
+                    <div class="blog-info">
+                        <span class="date">21 Feb 2024</span>
+                        <h3>Awas Ketinggalan Tren AI Outbound Petik Apel</h3>
+                        <p>Jangan biarkan bisnismu tertinggal. Temukan cara AI mempersonalisasi layanan wisata edukasi
+                            agar pelanggan setia dan pengalaman tamu semakin berkesan.</p>
+                        <a href="ai-personalisasi-outbound-petik-apel-batu-malang.html" class="read-more">Baca
+                            Selengkapnya</a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="blog-card reveal">
+                    <div class="blog-img">
+                        <img src="img/appel.png" alt="Berbagai jenis buah apel segar siap petik" loading="lazy"
+                            width="600" height="400">
+                    </div>
+                    <div class="blog-info">
+                        <span class="date">15 Feb 2024</span>
+                        <h3>Mengenal 3 Jenis Apel Unggulan di Batu</h3>
+                        <p>Pelajari perbedaan Apel Manalagi, Rome Beauty, dan Anna yang tumbuh subur di kebun kami
+                            sebelum Anda memetiknya.</p>
+                        <a href="jenis-apel-batu-malang.html" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="blog-card reveal">
+                    <div class="blog-img">
+                        <img src="img/b2.png" alt="Waktu santai minum kopi di kebun apel Batu" loading="lazy"
+                            width="600" height="400">
+                    </div>
+                    <div class="blog-info">
+                        <span class="date">10 Feb 2024</span>
+                        <h3>Waktu Terbaik Mengunjungi Batu</h3>
+                        <p>Tips memilih bulan dan jam terbaik agar pengalaman petik apel Anda maksimal dan terhindar
+                            dari hujan deras.</p>
+                        <a href="waktu-terbaik-wisata-batu.html" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 4 -->
+                <article class="blog-card reveal">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=600"
+                            alt="Anak-anak belajar memetik apel secara edukatif" loading="lazy" width="600"
+                            height="400">
+                    </div>
+                    <div class="blog-info">
+                        <span class="date">05 Feb 2024</span>
+                        <h3>Manfaat Wisata Edukasi untuk Anak</h3>
+                        <p>Simak bagaimana pengalaman memetik apel langsung dari pohon dapat merangsang tumbuh kembang
+                            sensori si kecil.</p>
+                        <a href="manfaat-wisata-edukasi-anak.html" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 5 -->
+                <article class="blog-card reveal">
+                    <div class="blog-img">
+                        <img src="https://images.unsplash.com/photo-1548685913-fe6678babe8d?auto=format&fit=crop&q=80&w=600"
+                            alt="Produk olahan apel khas kota Batu" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="blog-info">
+                        <span class="date">01 Feb 2024</span>
+                        <h3>Oleh-oleh Khas Batu Selain Apel</h3>
+                        <p>Rekomendasi produk olahan mulai dari keripik hingga sari buah murni yang wajib Anda bawa
+                            pulang sebagai oleh-oleh.</p>
+                        <a href="oleh-oleh-khas-batu-malang.html" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Back to Home -->
+            <div class="blog-back-cta">
+                <p>Ingin tahu lebih lanjut tentang kebun kami?</p>
+                <a href="index.html" class="btn-back-home">
+                    &#8592; Kembali ke Beranda
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>Apel<span>Batu</span></h2>
+                    <p>Destinasi wisata outbound dan petik apel keluarga terbaik di Kota Batu, Malang. Segar, Edukatif,
+                        dan Menyenangkan.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">Tentang Kami</a></li>
+                        <li><a href="blog.html">Blog &amp; Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Hubungi Kami</h4>
+                    <p>📍 Jl. Raya Punten, Batu, Malang</p>
+                    <p>📞 0822-1122-1909</p>
+                    <p>✉️ info@apelbatutour.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wisata Petik Apel Batu. All Rights Reserved.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="YouTube">YT</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="float-btns">
+        <a href="https://wa.me/082211221909" class="float-btn btn-wa-float" target="_blank" rel="noopener noreferrer"
+            aria-label="Chat WhatsApp">
+            <span class="icon">WA</span>
+        </a>
+        <button class="float-btn btn-scroll-top" id="scrollTopBtn" aria-label="Scroll to top">&#8593;</button>
+    </div>
+
+    <style>
+        /* Active nav link */
+        .nav-active {
+            color: var(--accent-color) !important;
+        }
+
+        .nav-active::after {
+            width: 100% !important;
+        }
+    </style>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
