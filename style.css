@@ -1591,6 +1591,82 @@ header.scrolled {
     }
 }
 
+/* --- Global Article Page Base Styles --- */
+
+.article-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+    background-attachment: scroll;
+    position: relative;
+}
+
+.article-content {
+    padding: 5rem 0;
+    background: #fff;
+}
+
+.article-body {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.article-body h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin: 3rem 0 1.5rem;
+    color: var(--primary-color);
+    line-height: 1.25;
+}
+
+.article-body h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--accent-color);
+    line-height: 1.3;
+}
+
+.article-body p {
+    margin-bottom: 1.5rem;
+}
+
+.article-body strong {
+    color: var(--primary-color);
+}
+
+.faq-section {
+    margin-top: 5rem;
+    padding: 4rem;
+    background: var(--bg-light);
+    border-radius: 20px;
+}
+
+.faq-item {
+    margin-bottom: 2rem;
+}
+
+.faq-item h4 {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.faq-item p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
 /* --- Article Enhancements --- */
 
 .toc-container {
@@ -1972,5 +2048,444 @@ blockquote {
 
     .share-links span {
         width: 100%;
+    }
+}
+
+/* =====================================================
+   COMPREHENSIVE MOBILE FIX — SEMUA HALAMAN
+   Pastikan TIDAK ADA elemen yg overflow horizontal
+   ===================================================== */
+
+/* ── Anti-overflow global ── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+video,
+iframe,
+table {
+    max-width: 100%;
+}
+
+/* ── Global article styles yg lebih mobile-friendly ── */
+.article-hero {
+    background-attachment: scroll !important;
+    /* Hapus parallax di mobile */
+}
+
+.article-body {
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* =====================================================
+   MOBILE ≤ 768px — Perbaikan Artikel
+   ===================================================== */
+@media (max-width: 768px) {
+
+    /* ── Artikel Hero ── */
+    .article-hero {
+        height: auto !important;
+        min-height: 45vw;
+        padding: 5rem 1rem 2.5rem !important;
+    }
+
+    .article-hero h1 {
+        font-size: clamp(1.4rem, 5.5vw, 2.2rem) !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.8rem;
+    }
+
+    .article-hero p {
+        font-size: 0.9rem !important;
+        margin-top: 0.6rem !important;
+        opacity: 0.85;
+    }
+
+    /* ── Artikel Content ── */
+    .article-content {
+        padding: 2.5rem 0 !important;
+    }
+
+    .article-body {
+        font-size: 1rem !important;
+        line-height: 1.8 !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .article-body h2 {
+        font-size: 1.5rem !important;
+        margin: 2rem 0 1rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .article-body h3 {
+        font-size: 1.15rem !important;
+        margin: 1.5rem 0 0.8rem !important;
+        line-height: 1.35 !important;
+    }
+
+    .article-body p {
+        margin-bottom: 1.2rem !important;
+    }
+
+    /* ── Table of Contents ── */
+    .toc-container {
+        padding: 1rem 1.2rem;
+        margin: 1.5rem 0;
+    }
+
+    .toc-header {
+        font-size: 0.95rem;
+    }
+
+    .toc-list {
+        padding-left: 0.8rem;
+    }
+
+    .toc-list a {
+        font-size: 0.88rem;
+        line-height: 1.5;
+    }
+
+    .toc-list li {
+        margin-bottom: 0.6rem;
+    }
+
+    /* ── Blockquote ── */
+    blockquote {
+        font-size: 1rem !important;
+        padding: 1rem 1.2rem !important;
+        margin: 1.5rem 0 !important;
+        line-height: 1.6;
+    }
+
+    /* ── Baca Juga ── */
+    .baca-juga {
+        padding: 0.9rem 1rem !important;
+        font-size: 0.9rem !important;
+        margin: 1.5rem 0 !important;
+    }
+
+    /* ── Gambar dengan caption ── */
+    .img-with-caption {
+        margin: 1.5rem 0 !important;
+    }
+
+    .img-with-caption img {
+        border-radius: 10px !important;
+    }
+
+    .img-caption {
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        padding: 0 0.5rem;
+    }
+
+    /* ── FAQ di artikel ── */
+    .faq-section {
+        padding: 1.5rem !important;
+        margin-top: 2.5rem !important;
+        border-radius: 14px !important;
+    }
+
+    .faq-section h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .faq-item {
+        margin-bottom: 1.2rem !important;
+    }
+
+    .faq-item h4 {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .faq-item p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
+    /* ── Author Profile ── */
+    .author-profile {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 1.5rem 1.2rem !important;
+        gap: 1rem !important;
+        margin: 2.5rem 0 !important;
+        border-radius: 16px !important;
+    }
+
+    .author-img {
+        width: 80px !important;
+        height: 80px !important;
+        margin: 0 auto;
+    }
+
+    .author-info h4 {
+        font-size: 1rem !important;
+        margin-bottom: 0.4rem;
+    }
+
+    .author-info p {
+        font-size: 0.88rem !important;
+        line-height: 1.6;
+    }
+
+    /* ── Share Links ── */
+    .share-links {
+        flex-wrap: wrap !important;
+        gap: 0.6rem !important;
+        margin: 1.8rem 0 !important;
+        padding-top: 1.2rem !important;
+        align-items: center;
+    }
+
+    .share-links>span {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .share-btn {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.82rem !important;
+        border-radius: 6px !important;
+    }
+
+    /* ── Related Articles ── */
+    .related-articles {
+        margin-top: 2rem !important;
+        padding-top: 1.8rem !important;
+    }
+
+    .related-articles h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .related-grid .blog-card {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 0.8rem !important;
+    }
+
+    .related-grid .blog-img {
+        width: 90px !important;
+        height: 70px !important;
+        flex-shrink: 0 !important;
+        border-radius: 8px !important;
+        overflow: hidden;
+    }
+
+    .related-grid .blog-img img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .related-grid .blog-info {
+        padding: 0.6rem 0.8rem !important;
+        flex: 1;
+    }
+
+    .related-grid .blog-info h4 {
+        font-size: 0.88rem !important;
+        line-height: 1.4 !important;
+        margin: 0 !important;
+    }
+}
+
+/* =====================================================
+   MOBILE ≤ 480px — Penyesuaian Ekstra Kecil
+   ===================================================== */
+@media (max-width: 480px) {
+
+    /* ── Navbar ── */
+    .container {
+        padding: 0 0.9rem;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    /* ── Hero Artikel (layar sangat kecil) ── */
+    .article-hero {
+        min-height: 50vw;
+        padding: 4.5rem 0.9rem 2rem !important;
+    }
+
+    .article-hero h1 {
+        font-size: clamp(1.25rem, 5vw, 1.7rem) !important;
+    }
+
+    /* ── Konten artikel ── */
+    .article-body {
+        font-size: 0.96rem !important;
+    }
+
+    .article-body h2 {
+        font-size: 1.3rem !important;
+    }
+
+    .article-body h3 {
+        font-size: 1.05rem !important;
+    }
+
+    /* ── Blockquote ── */
+    blockquote {
+        font-size: 0.94rem !important;
+        padding: 0.85rem 1rem !important;
+        border-left-width: 3px !important;
+    }
+
+    /* ── Baca Juga ── */
+    .baca-juga {
+        font-size: 0.88rem !important;
+    }
+
+    /* ── FAQ Artikel ── */
+    .faq-section {
+        padding: 1.1rem 0.9rem !important;
+        border-radius: 10px !important;
+    }
+
+    .faq-section h2 {
+        font-size: 1.2rem !important;
+    }
+
+    .faq-item h4 {
+        font-size: 0.9rem;
+    }
+
+    /* ── Author ── */
+    .author-profile {
+        padding: 1.2rem 0.9rem !important;
+    }
+
+    .author-img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    /* ── Share buttons ── */
+    .share-btn {
+        flex: 1;
+        text-align: center;
+    }
+
+    /* ── Related grid card (tiny screen) ── */
+    .related-grid .blog-img {
+        width: 75px !important;
+        height: 60px !important;
+    }
+
+    /* ── Hero index ── */
+    .hero h1 {
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+    }
+
+    /* ── About stats ── */
+    .stat-item strong {
+        font-size: 1.2rem;
+    }
+
+    /* ── Footer text ── */
+    .footer-brand p {
+        font-size: 0.88rem;
+    }
+
+    .footer-contact p {
+        font-size: 0.88rem;
+    }
+
+    /* ── Blog preview card (index) ── */
+    .blog-preview-card img {
+        width: 70px !important;
+        height: 60px !important;
+    }
+
+    .bpc-info h4 {
+        font-size: 0.82rem !important;
+    }
+
+    /* ── CTA Section ── */
+    .cta-title {
+        font-size: 1.7rem !important;
+    }
+
+    .cta-desc {
+        font-size: 0.9rem !important;
+    }
+
+    /* ── FAQ home ── */
+    .faq-home-q {
+        font-size: 0.9rem !important;
+        padding: 1rem 0.2rem !important;
+    }
+
+    .faq-home-a p {
+        font-size: 0.88rem !important;
+        padding-right: 0.3rem !important;
+    }
+
+    /* ── Blog page hero ── */
+    .blog-hero {
+        padding: 6rem 0 3rem !important;
+    }
+
+    .blog-hero-content h1 {
+        font-size: 1.7rem !important;
+    }
+
+    .blog-hero-content p {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* ── Pastikan box model tidak ada yg overflow di semua layar ── */
+@media (max-width: 900px) {
+
+    .article-body,
+    .article-content,
+    .related-grid,
+    .author-profile,
+    .share-links,
+    .faq-section,
+    blockquote,
+    .baca-juga,
+    .toc-container {
+        max-width: 100% !important;
+        overflow-x: hidden;
+    }
+
+    /* Blog page grid jadi 1 kolom di mobile */
+    .blog-page-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .blog-card-featured {
+        grid-column: span 1 !important;
+    }
+
+    .blog-card-featured .blog-img {
+        height: 210px !important;
+    }
+
+    .blog-card-featured .blog-info h3 {
+        font-size: 1.3rem !important;
     }
 }
